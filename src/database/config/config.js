@@ -7,14 +7,14 @@ module.exports = {
         "host": "127.0.0.1",
         "dialect": "postgres"
     },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-    "production": {
+    "test": {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    production: {
         url: config.db.production.url,
         use_env_variable: config.db.production.url,
         dialect: 'postgres',
