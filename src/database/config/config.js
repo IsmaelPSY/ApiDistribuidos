@@ -1,13 +1,12 @@
-require('dotenv').config();
-
+const config = require('../../config')
 module.exports = {
-  "development": {
-    "username": process.env.DB_DEV_USERNAME,
-    "password": process.env.DB_DEV_PASSWORD,
-    "database": process.env.DB_DEV_DATABASE,
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
+    "development": {
+        "username": config.db.development.username,
+        "password": config.db.development.password,
+        "database": config.db.development.database,
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
   "test": {
     "username": "root",
     "password": null,
@@ -15,11 +14,17 @@ module.exports = {
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
+    "production": {
+        url: config.db.production.url,
+        use_env_variable: config.db.production.url,
+        dialect: 'postgres',
+        protocol: 'postgres',
+        ssl: true,
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        },
+    },
 }
