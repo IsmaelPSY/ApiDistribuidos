@@ -2,7 +2,7 @@
   "name": "apiauth",
   "version": "1.0.0",
   "description": "Esta api sera utilizada como metodo de autenticacion para tablas de usuarios.",
-  "main": "src/app.js",
+  "main": "./src/app.js",
   "scripts": {
     "start": "node ./src/app.js",
     "dev": "cross-env NODE_ENV=development nodemon ./src/app.js"
