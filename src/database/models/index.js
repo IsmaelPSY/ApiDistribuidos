@@ -1,5 +1,4 @@
 'use strict';
-
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -10,7 +9,7 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  sequelize = new Sequelize('postgres://amzjavqgumqusl:498dc6e0e7307d3f3c960a6e8232e8a1e564170363d7a9a23b935cb807628ce0@ec2-54-208-104-27.compute-1.amazonaws.com:5432/dc6s9h32v7ssvr', config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
@@ -35,3 +34,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
