@@ -26,6 +26,12 @@ app.use(express.urlencoded({
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 else app.use(morgan("combined"));
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+      message: "Welcome to APi authentication"
+  })
+})
+
 app.use("/api/v1/users",usersRoutes );
 app.use("/api/v1/auth", authRoutes);
 
