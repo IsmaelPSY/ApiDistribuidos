@@ -4,7 +4,6 @@ const cors = require("cors");
 const morgan = require("morgan")
 const config = require("./config");
 
-
 // Routes
 const usersRoutes = require("./users/users.routes").router
 const authRoutes = require('./auth/auth.routes').router
@@ -36,7 +35,7 @@ app.use("/api/v1/users",usersRoutes );
 app.use("/api/v1/auth", authRoutes);
 
 app.listen(config.port, () => {
-  console.log(`Server started at port ${config.port}`)
+  // console.log(`Server started at port ${config.port}`)
 })
 
 module.exports = { app };

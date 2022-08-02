@@ -17,7 +17,7 @@ else {
   sequelize = new Sequelize(configObj.database, configObj.username, configObj.password, configObj);
 }
 
-function initModels(sequelize) {
+function initModels() {
   var users = _users(sequelize, DataTypes);
 
 
@@ -25,8 +25,7 @@ function initModels(sequelize) {
     users,
   };
 }
-module.exports = initModels;
+
 module.exports.initModels = initModels;
-module.exports.default = initModels;
 module.exports.sequelize = sequelize;
 
